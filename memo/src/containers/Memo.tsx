@@ -2,13 +2,12 @@ import Memo from '../types/Memo';
 import React, { useState, FC } from 'react';
 import MemoComponent from '../components/Memo';
 
-
-const useMemo = (initMemos: Memo[]): [Memo[], (Memo) => void] => {
+const useMemo = (initMemos: Memo[]): [Memo[], (memo: Memo) => void] => {
   const [memos, setMemo] = useState(initMemos);
 
+  // TODO: なぜ memos.push(memo) => setMemo(memos)ではダメなのか
   const addMemo = (memo: Memo) => {
-    memos.push(memo);
-    setMemo(memos);
+    setMemo(memos => [...memos, memo]);
   }
 
   return [memos, addMemo];
@@ -23,7 +22,7 @@ const MemoContainer: FC = () => {
   const [memos, addMemo] = useMemo(INIT_MEMOS);
 
   return (
-    <MemoComponent memos={memos} add={addMemo} />
+    <MemoComponent memos={memos} addMemo={addMemo} />
   )
 }
 

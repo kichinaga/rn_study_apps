@@ -1,33 +1,61 @@
-import React, { FC, Fragment, memo } from "react";
-import { View, FlatList, StyleSheet, Text } from 'react-native';
+import React, { FC, Fragment, memo, useState } from "react";
+import { View, FlatList, StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import Memo from '../types/Memo';
 
 
 interface MemoProps {
   memos: Memo[];
-  add: (Memo) => void;
+  addMemo: (memo: Memo) => void;
 }
 
-const MemoComponent: FC<MemoProps> = ({memos, add}) => {
+const MemoComponent: FC<MemoProps> = ({memos, addMemo}) => {
+  const [inputText, setInputText] = useState('');
+
+  const addInputText = () => {
+    if (inputText !== '') {
+      addMemo({ key: `${memos.length + 1}`, value: inputText})
+      setInputText('')
+    }
+  }
+
   return (
     <Fragment>
-      <View style={styles.container}>
-        <FlatList
+      <View>
+        <TextInput
+          style={styles.input_text}
+          placeholder="メモを入力"
+          value={inputText}
+          onChangeText={(text) => setInputText(text)} />
+        <TouchableOpacity onPress={addInputText}>
+          <Text style={styles.plus}>ADD</Text>
+        </TouchableOpacity>
+      </View>
+      <Text>INPUT: {inputText}</Text>
+      <FlatList
           data={memos}
-          renderItem={({item}) => <Text>{item.value}</Text>}
+          extraData={memos.length}
+          renderItem={({item}) => <Text style={styles.list_text}>{item.value}</Text>}
           keyExtractor={memo => memo.key}
         />
-      </View>
+
     </Fragment>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  input_text: {
+    height: 40
+  },
+  list_text: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
+  },
+  plus: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: '#4169e1',
+    marginTop: 15,
+    paddingLeft: 15,
   }
 })
 
