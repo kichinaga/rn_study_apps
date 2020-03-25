@@ -3,6 +3,7 @@ import HomeScreen from '../ui/nav_sample/HomeScreen';
 import PropsComponent from '../ui/props/PropsComponent';
 import StateComponent from '../ui/state/StateComponent';
 import TextInputComponent from '../ui/text_input/TextInputComponent';
+import TouchComponent from '../ui/touch/TouchComponent';
 
 export const Routings = [
   { title: 'root', component: RootNavigator },
@@ -10,4 +11,5 @@ export const Routings = [
   { title: 'props', component: PropsComponent },
   { title: 'state', component: StateComponent },
   { title: 'textInput', component: TextInputComponent },
+  { title: 'touch', component: TouchComponent },
 ]
