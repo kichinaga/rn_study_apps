@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import MemoContainer from './src/containers/Memo';
 
 export default function App() {
   return (
-    <Fragment>
-      <View style={styles.container}>
-        <MemoContainer></MemoContainer>
-      </View>
-    </Fragment>
+    <SafeAreaView style={styles.container}>
+      <MemoContainer></MemoContainer>
+    </SafeAreaView>
   );
 }
 
