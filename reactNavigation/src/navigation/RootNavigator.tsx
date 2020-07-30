@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { HomeComponent } from '../ui/HomeComponent';
 
 import { MovingScreenNavigator } from './MovingScreenNavigator';
-import { UnderTabScreenNavigator } from './UnderTabScreenNavigator';
+import { BottomTabScreenNavigator } from './BottomTabScreenNavigator';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -15,7 +15,7 @@ export const RootNavigator = () => {
       <RootStack.Navigator initialRouteName="Home">
         <RootStack.Screen name="Home" component={HomeComponent} />
         <RootStack.Screen name="MovingScreen" component={MovingScreenNavigator} />
-        <RootStack.Screen name="UnderTab" component={UnderTabScreenNavigator} />
+        <RootStack.Screen name="BottomTab" component={BottomTabScreenNavigator} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

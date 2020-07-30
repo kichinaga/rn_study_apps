@@ -28,9 +28,9 @@ export const HomeComponent = ({ navigation }) => {
           <Text style={styles.navigateButtonText}>Moving between Screens</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('UnderTab')}>
+      <TouchableOpacity onPress={() => navigation.navigate('BottomTab')}>
         <View style={styles.navigateButtonView}>
-          <Text style={styles.navigateButtonText}>Under Tabs</Text>
+          <Text style={styles.navigateButtonText}>Bottom Tabs</Text>
         </View>
       </TouchableOpacity>
     </View>

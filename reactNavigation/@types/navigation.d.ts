@@ -1,7 +1,7 @@
 declare type RootStackParamList = {
   Home: undefined;
   MovingScreen: MovingScreenStackParamList;
-  UnderTab: UnderTabParamList;
+  BottomTab: BottomTabParamList;
 };
 
 declare type MovingScreenStackParamList = {
@@ -10,7 +10,7 @@ declare type MovingScreenStackParamList = {
   Third: undefined;
 };
 
-declare type UnderTabParamList = {
+declare type BottomTabParamList = {
   Home: undefined;
   Sub: undefined;
   Settings: undefined;
