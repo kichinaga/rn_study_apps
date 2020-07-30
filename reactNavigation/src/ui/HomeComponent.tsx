@@ -11,9 +11,12 @@ const styles = StyleSheet.create({
   },
   navigateButtonView: {
     marginVertical: 24,
-    paddingHorizontal: 12,
+    padding: 12,
     alignItems: 'center',
     backgroundColor: buttonColor,
+  },
+  navigateButtonText: {
+    color: 'white',
   },
 });
 
@@ -22,7 +25,7 @@ export const HomeComponent = ({ navigation }) => {
     <View style={styles.mainView}>
       <TouchableOpacity onPress={() => navigation.navigate('MovingScreen')}>
         <View style={styles.navigateButtonView}>
-          <Text>Moving between Screens</Text>
+          <Text style={styles.navigateButtonText}>Moving between Screens</Text>
         </View>
       </TouchableOpacity>
     </View>

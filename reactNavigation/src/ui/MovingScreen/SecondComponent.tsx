@@ -12,8 +12,7 @@ const styles = StyleSheet.create({
 export const SecondComponent = ({ navigation }) => (
   <View style={styles.mainView}>
     <Text>Second Screen</Text>
-    <Button title="Go First" onPress={() => navigation.navigate('First')} />
+    <Button title="Go Thirt" onPress={() => navigation.navigate('Third')} />
     <Button title="Back First" onPress={() => navigation.goBack()} />
-    <Button title="Reset First" onPress={() => navigation.reset({ index: 0, routes: [{ name: 'First' }] })} />
   </View>
 );

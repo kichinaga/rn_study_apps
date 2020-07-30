@@ -6,4 +6,5 @@ declare type RootStackParamList = {
 declare type MovingScreenStackParamList = {
   First: undefined;
   Second: undefined;
+  Third: undefined;
 };
