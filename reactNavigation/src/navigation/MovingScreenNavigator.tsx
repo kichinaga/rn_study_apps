@@ -7,12 +7,10 @@ import { ThirdComponent } from 'src/ui/MovingScreen/ThirdComponent';
 
 const MSStack = createStackNavigator<MovingScreenStackParamList>();
 
-export function MovingScreenNavigator() {
-  return (
-    <MSStack.Navigator initialRouteName="First">
-      <MSStack.Screen name="First" component={FirstComponent} />
-      <MSStack.Screen name="Second" component={SecondComponent} />
-      <MSStack.Screen name="Third" component={ThirdComponent} />
-    </MSStack.Navigator>
-  );
-}
+export const MovingScreenNavigator = () => (
+  <MSStack.Navigator initialRouteName="First">
+    <MSStack.Screen name="First" component={FirstComponent} />
+    <MSStack.Screen name="Second" component={SecondComponent} />
+    <MSStack.Screen name="Third" component={ThirdComponent} />
+  </MSStack.Navigator>
+);
