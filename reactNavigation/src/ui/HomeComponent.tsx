@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
-const buttonColor = '#2196F3';
+import React, { ReactElement } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { NavigationButton } from 'src/common/components/NavigationButton';
 
 const styles = StyleSheet.create({
   mainView: {
@@ -9,30 +8,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  navigateButtonView: {
-    marginVertical: 24,
-    padding: 12,
-    alignItems: 'center',
-    backgroundColor: buttonColor,
-  },
-  navigateButtonText: {
-    color: 'white',
-  },
 });
 
-export const HomeComponent = ({ navigation }) => {
+export const HomeComponent = ({ navigation }): ReactElement => {
   return (
     <View style={styles.mainView}>
-      <TouchableOpacity onPress={() => navigation.navigate('MovingScreen')}>
-        <View style={styles.navigateButtonView}>
-          <Text style={styles.navigateButtonText}>Moving between Screens</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('BottomTab')}>
-        <View style={styles.navigateButtonView}>
-          <Text style={styles.navigateButtonText}>Bottom Tabs</Text>
-        </View>
-      </TouchableOpacity>
+      <NavigationButton callback={() => navigation.navigate('MovingScreen')} text="Moving between Screens" />
+      <NavigationButton callback={() => navigation.navigate('BottomTab')} text="Bottom Tabs" />
+      <NavigationButton callback={() => navigation.navigate('MovingInTabs')} text="Moving in Tabs" />
     </View>
   );
 };
